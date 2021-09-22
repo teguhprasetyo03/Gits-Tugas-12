@@ -3,55 +3,87 @@ package com.kelascoding.tugas12.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity(tableName = "movielist")
 public class Movie implements Parcelable {
+
+    @PrimaryKey
+    @SerializedName("id")
+    @Expose
+    private int id;
+
     @SerializedName("adult")
     @Expose
     private Boolean adult;
+
+    @ColumnInfo(name = "backdrop_path")
     @SerializedName("backdrop_path")
     @Expose
     private String backdropPath;
+
+    @ColumnInfo(name = "genre_ids")
     @SerializedName("genre_ids")
     @Expose
-    private List<Integer> genreIds = null;
-    @SerializedName("id")
-    @Expose
-    private Integer id;
+    private List<Integer> genreIds;
+
+    @ColumnInfo(name = "original_language")
     @SerializedName("original_language")
     @Expose
     private String originalLanguage;
+
+    @ColumnInfo(name = "original_title")
     @SerializedName("original_title")
     @Expose
     private String originalTitle;
+
+    @ColumnInfo(name = "overview")
     @SerializedName("overview")
     @Expose
     private String overview;
+
+    @ColumnInfo(name = "popularity")
     @SerializedName("popularity")
     @Expose
     private Double popularity;
+
+    @ColumnInfo(name = "poster_path")
     @SerializedName("poster_path")
     @Expose
     private String posterPath;
+
+    @ColumnInfo(name = "release_date")
     @SerializedName("release_date")
     @Expose
     private String releaseDate;
+
+    @ColumnInfo(name = "title")
     @SerializedName("title")
     @Expose
     private String title;
+
+    @ColumnInfo(name = "video")
     @SerializedName("video")
     @Expose
     private Boolean video;
+
+    @ColumnInfo(name = "vote_average")
     @SerializedName("vote_average")
     @Expose
     private Double voteAverage;
+
+    @ColumnInfo(name = "vote_count")
     @SerializedName("vote_count")
     @Expose
-    private Integer voteCount;
+    private int voteCount;
 
     public Movie(Boolean adult, String backdropPath, List<Integer> genreIds, Integer id, String originalLanguage, String originalTitle, String overview, Double popularity, String posterPath, String releaseDate, String title, Boolean video, Double voteAverage, Integer voteCount) {
         this.adult = adult;

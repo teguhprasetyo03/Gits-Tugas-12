@@ -6,8 +6,12 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
+
+
+
     defaultConfig {
         applicationId "com.kelascoding.tugas12"
+        buildConfigField "String", "IMAGE", "\"https://image.tmdb.org/t/p/w500\""
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -46,7 +50,16 @@ dependencies {
     // add material design recyclerview
     implementation 'com.google.android.material:material:1.0.0'
 
+    //  picasso library
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-    implementation 'com.codesgood:justifiedtextview:1.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    // room database
+    def room_version = "2.3.0"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
 }

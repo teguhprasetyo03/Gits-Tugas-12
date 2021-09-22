@@ -3,12 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.FavoriteFragment">
+    tools:context=".fragment.MovieFragment">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_clear_fav"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:text="Clear List"
+        android:textStyle="bold"
+        android:background="#FF2667"
+        android:textColor="@color/white"
+        android:layout_marginBottom="20dp"
+        android:textSize="10sp"/>
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="40dp"
+        android:id="@+id/rv_favorite"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:listitem="@layout/item_cardview"/>
 
 </FrameLayout>

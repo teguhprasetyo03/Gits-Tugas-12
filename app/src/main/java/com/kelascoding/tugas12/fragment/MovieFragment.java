@@ -60,6 +60,7 @@ public class MovieFragment extends Fragment {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
+
         MovieApiService movieApiService = retrofit.create(MovieApiService.class);
         Call<MovieResponse> call = movieApiService.getTopRatedMovies(API_KEY);
         call.enqueue(new Callback<MovieResponse>() {
